@@ -1,8 +1,8 @@
 import React from 'react' // 
 import {createRoot} from 'react-dom/client'//
 import './style.css'
-import Header from './header'
-import Footer from './footer'
+import Header from './Header'
+import Footer from './Footer'
 import SomaliQuote from './SomaliQuote'
 
 const root = document.getElementById("root")
