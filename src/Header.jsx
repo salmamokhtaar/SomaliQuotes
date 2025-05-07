@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className='bg-blue-500  p-5  text-5xl text-white'> 
-    <h1 className='text-4xl font-bold'>Somali <span className='text-orange-500'>Quotes</span></h1>
-  </div>
+    <header className='bg-gradient-to-r from-blue-600 to-blue-400 shadow-lg'>
+      <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
+        <h1 className='text-4xl font-bold text-white'>Somali <span className='text-yellow-400'>Quotes</span></h1>
+
+     </div>
+    </header>
   )
 }
 
