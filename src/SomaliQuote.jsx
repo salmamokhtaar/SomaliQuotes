@@ -134,35 +134,60 @@ function SomaliQuote() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="max-w-3xl mx-auto p-8 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg border border-blue-100">
-        <h2 className="text-2xl font-semibold text-blue-700 mb-6">Somali Proverbs (Maahmaahyo)</h2>
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-semibold text-gray-700 mb-8 text-center">Somali Proverbs (Maahmaahyo)</h2>
 
-        <div className={`relative min-h-[200px] flex flex-col items-center justify-center mb-8 ${fadeIn ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
-          <p className="text-3xl font-medium text-gray-800 mb-6 text-center">
-            {`${index + 1}. ${MaahMaah[index].text}`}
-          </p>
+        {/* Quote Box - Similar to the image design */}
+        <div className="relative mb-10">
+          {/* Blue decorative elements */}
+          <div className="absolute -top-6 -left-6 w-12 h-12 text-blue-500">
+            <i className="fa-solid fa-quote-left text-4xl"></i>
+          </div>
 
-          {showTranslation && (
-            <div className="bg-blue-50 p-4 rounded-lg w-full mb-4">
-              <p className="text-xl text-gray-700">
-                <span className="font-semibold">Translation:</span> {MaahMaah[index].translation}
-              </p>
+          {/* Main quote box */}
+          <div className="border border-blue-200 bg-blue-50 p-10 rounded-lg shadow-md">
+            <div className={`relative min-h-[180px] flex flex-col items-center justify-center ${fadeIn ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
+
+              {/* Quote text styled like the image */}
+              <div className="text-center mb-6">
+                <p className="text-2xl font-medium text-gray-700 mb-2">
+                  {MaahMaah[index].text}
+                </p>
+              </div>
+
+              {/* Author/source line with underline like in the image */}
+              <div className="self-end mt-4">
+                <p className="text-gray-600">Somali Wisdom</p>
+                <div className="h-1 w-16 bg-blue-400 mt-1"></div>
+              </div>
             </div>
-          )}
 
-          {showMeaning && (
-            <div className="bg-yellow-50 p-4 rounded-lg w-full">
-              <p className="text-xl text-gray-700">
-                <span className="font-semibold">Meaning:</span> {MaahMaah[index].meaning}
-              </p>
+            {/* Translation and Meaning sections */}
+            <div className="mt-6 space-y-4">
+              {showTranslation && (
+                <div className="bg-white p-4 rounded-lg border border-blue-100 w-full">
+                  <p className="text-xl text-gray-700">
+                    <span className="font-semibold text-blue-600">Translation:</span> {MaahMaah[index].translation}
+                  </p>
+                </div>
+              )}
+
+              {showMeaning && (
+                <div className="bg-white p-4 rounded-lg border border-blue-100 w-full">
+                  <p className="text-xl text-gray-700">
+                    <span className="font-semibold text-blue-600">Meaning:</span> {MaahMaah[index].meaning}
+                  </p>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-6">
+        {/* Control buttons styled to match the clean design */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           <button
             onClick={toggleTranslation}
-            className={`px-4 py-2 rounded-md text-white transition-colors ${showTranslation ? 'bg-green-600' : 'bg-green-500 hover:bg-green-600'}`}
+            className="px-6 py-3 border-2 border-blue-500 text-blue-500 font-medium rounded-md hover:bg-blue-50 transition-colors"
           >
             <i className={`fa-solid ${showTranslation ? 'fa-eye-slash' : 'fa-eye'} mr-2`}></i>
             {showTranslation ? 'Hide Translation' : 'Show Translation'}
@@ -170,7 +195,7 @@ function SomaliQuote() {
 
           <button
             onClick={toggleMeaning}
-            className={`px-4 py-2 rounded-md text-white transition-colors ${showMeaning ? 'bg-amber-600' : 'bg-amber-500 hover:bg-amber-600'}`}
+            className="px-6 py-3 border-2 border-blue-500 text-blue-500 font-medium rounded-md hover:bg-blue-50 transition-colors"
           >
             <i className={`fa-solid ${showMeaning ? 'fa-lightbulb' : 'fa-lightbulb'} mr-2`}></i>
             {showMeaning ? 'Hide Meaning' : 'Show Meaning'}
@@ -190,7 +215,7 @@ function SomaliQuote() {
 
           <button
             onClick={randomBtn}
-            className="bg-purple-500 px-6 py-3 rounded-md text-white font-medium hover:bg-purple-600 transition-colors flex items-center"
+            className="bg-blue-500 px-6 py-3 rounded-md text-white font-medium hover:bg-blue-600 transition-colors flex items-center"
           >
             <i className="fa-solid fa-shuffle mr-2"></i>
             Random
